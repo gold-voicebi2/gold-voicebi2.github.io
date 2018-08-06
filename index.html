@@ -16,16 +16,14 @@
 </head>	
 
 <body onload=initializeViz();>
-<h1>Major League Soccer Standings</h1>
+<h1>Key Financial Metrics</h1>
 Say the following commands:<br /> 
-<i>"Select East"</i> 
-<i>"Select West"</i> 
-
-<i>"Filter East"</i> 
-<i>"Clear Filter"</i> 
+<i>"Which business needs focus"</i> 
+<i>"What is my sales for this year"</i> 
+<i>"How is my operating income as compared to prior year"</i> 
+<i>"What is my working Capital Turns"</i>	
 <i>"Export Image"</i> 
 <i>"Export PDF"</i> 
-<i>"Reset"</i>
 <br>
 <br>
 <center><div id='tableauViz'></div></center>
@@ -34,11 +32,11 @@ Say the following commands:<br />
 if (annyang) {
   // These are the voice commands in quotes followed by the function
   var commands = {
-  	'Select East': function() { selectEast(); responsiveVoice.speak('selecting East', "UK English Male"); },
- 	'Select West': function() { selectWest(); responsiveVoice.speak('selecting West', "UK English Male"); },
-	'Clear Selection': function() { clearSelection; responsiveVoice.speak('Clearing Selection', "UK English Male"); },
-	'Filter East': function() { filterEast(); responsiveVoice.speak('Filtering East', "UK English Male"); },
-	'Clear Filter': function() { clearFilters(); responsiveVoice.speak('Clearing filter', "UK English Male"); },
+	  'Which business needs focus' : function() {responsiveVoice.speak('Healthcare and Industrial segments needs focus', "UK English Male");},
+	  'What is my sales for this year' : function() {responsiveVoice.speak('Sales for this year is one hundred seventy two million dollars', "UK English Male");},
+	  'How is my operating income as compared to prior year' : function() {responsiveVoice.speak('OI is down by 85 percent', "UK English Male");},
+  	  'What is my working Capital Turns' : function() {responsiveVoice.speak('Working Capital Turns is 9.9', "UK English Male");},
+ 	
 	'Export Image': function() { exportImage(); responsiveVoice.speak('Exporting Image', "UK English Male"); },
 	'Export PDF': function() { exportPDF(); responsiveVoice.speak('Exporting PDF', "UK English Male"); },
 	'Reset': function() { Reset(); responsiveVoice.speak('Reset done'); }
@@ -58,10 +56,10 @@ function initializeViz(){
 
 var placeholderDiv = document.getElementById("tableauViz");
 
-var url = "https://public.tableau.com/views/MajorLeagueSoccerStandings/Sportsviz?:embed=y&:display_count=yes";
+var url = "https://public.tableau.com/shared/D49G47HGG?:display_count=yes";
 var options = {
-   width: "1004",   
-   height: "669",
+   width: "1200",   
+   height: "900",
    hideTabs: true,
    hideToolbar: true,
   onFirstInteractive: function () {
