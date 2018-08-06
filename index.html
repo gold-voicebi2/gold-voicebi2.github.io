@@ -129,6 +129,15 @@ function exportPDF() {
 	
 	
 	
+	function changeParam(value)
+{
+workbook.changeParameterValueAsync('Scenario', value)
+.then(function() {alert('success');})
+.otherwise(function(err) { alert('failed: ' + err);});
+
+}
+	
+	
 	
 		
 //Start Viz Over
